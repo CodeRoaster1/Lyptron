@@ -9,44 +9,44 @@
 
 const team = [
   {
-    name: "ARJUN L",
-    role: "Co-Founder, Lead Developer",
-    bio: "Full-stack engineer building scalable architectures and intuitive user experiences. Expert in Next.js and Cloud Infrastructure.",
-    techIcons: [
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",       label: "React" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",     label: "Next.js" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",     label: "Node.js" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", label: "TS" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg", label: "AWS" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",     label: "Docker" },
-    ],
-    image: "/arju.jpg",
-  },
-  {
     name: "SRIVATHSA B S",
     role: "Founder, Lead Designer, AI-Dev",
     bio: "Visionary designer and AI researcher focusing on the intersection of human-centric design and machine-learning automation.",
     techIcons: [
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",       label: "Figma" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",     label: "Python" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",   label: "PyTorch" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",   label: "Flutter" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", label: "Figma" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", label: "Python" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", label: "PyTorch" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", label: "Flutter" },
       { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", label: "TF" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",  label: "PS" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg", label: "PS" },
     ],
     image: "/sri.png",
   },
+  {
+    name: "ARJUN L",
+    role: "Co-Founder, Lead Developer",
+    bio: "Full-stack engineer building scalable architectures and intuitive user experiences. Expert in Next.js and Cloud Infrastructure.",
+    techIcons: [
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", label: "React" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", label: "Next.js" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", label: "Node.js" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", label: "TS" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", label: "Docker" },
+    ],
+    image: "/arju.jpg",
+  },
+
   {
     name: "SURYAKANTH KATTI",
     role: "Social Media Manager, Developer",
     bio: "Bridging the gap between technical development and digital marketing. Creative developer with a knack for growth engineering.",
     techIcons: [
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",         label: "CSS3" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",       label: "HTML5" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", label: "CSS3" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", label: "HTML5" },
       { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", label: "JS" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",       label: "React" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",     label: "Python" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",           label: "Git" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", label: "React" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", label: "Python" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", label: "Git" },
     ],
     image: "/kali.png",
   },
@@ -55,12 +55,12 @@ const team = [
     role: "Junior Developer, Sales Admin",
     bio: "Operations-focused developer ensuring smooth delivery cycles and administrative excellence across all digital projects.",
     techIcons: [
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",       label: "HTML5" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",         label: "CSS3" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", label: "HTML5" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", label: "CSS3" },
       { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", label: "JS" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",     label: "Node.js" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",     label: "GitHub" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",       label: "MySQL" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", label: "Node.js" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", label: "GitHub" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", label: "MySQL" },
     ],
     image: "/lali.png",
   },
@@ -87,7 +87,7 @@ export default function Story() {
               <span className="text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>BEHIND LYPTRON</span>
             </h2>
           </div>
-          
+
           <div className="max-w-[360px] md:mt-24 flex-shrink-0">
             <div className="font-['Space_Mono'] text-[0.6rem] tracking-[0.28em] text-[#2a3a58] mb-4 uppercase font-bold">
               04 ENGINEERS
@@ -100,10 +100,10 @@ export default function Story() {
         </div>
 
         {/* ── Team Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-16">
           {team.map((member, idx) => (
             <div key={idx} className="team-card group">
-              
+
               {/* Photo Background */}
               <img
                 src={member.image}
@@ -126,9 +126,9 @@ export default function Story() {
                 <div className="team-card__details">
                   <div className="team-card__details-inner">
                     <p className="team-card__bio">{member.bio}</p>
-                    
+
                     <div className="w-full h-[1px] bg-[rgba(255,255,255,0.1)] my-4" />
-                    
+
                     <div className="team-card__tech-label">// TECH STACK</div>
                     <div className="team-card__tech-icons">
                       {member.techIcons.map((icon, ti) => (
@@ -160,7 +160,8 @@ export default function Story() {
         .team-card {
           position: relative;
           width: 100%;
-          height: 580px;
+          height: clamp(450px, 70vh, 720px);
+
           overflow: hidden;
           background: #0a0d16;
           border: 1px solid rgba(255, 255, 255, 0.05);
@@ -201,6 +202,20 @@ export default function Story() {
         }
 
         /* ── Content Container ── */
+        .team-card__overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(10, 15, 30, 0.92); /* richer dark overlay */
+          backdrop-filter: blur(3px);
+          z-index: 3;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+        }
+        .team-card:hover .team-card__overlay {
+          opacity: 1;
+        }
+
         .team-card__content {
           position: absolute;
           inset: 0;
@@ -209,6 +224,7 @@ export default function Story() {
           flex-direction: column;
           justify-content: flex-end;
           padding: 2rem 1.8rem;
+          text-align: left;
         }
 
         /* ── Header (Name & Role) ── */
@@ -219,22 +235,28 @@ export default function Story() {
 
         .team-card__name {
           font-family: 'Orbitron', monospace;
-          font-size: 1.25rem;
+          font-size: clamp(1rem, 1.6vw, 1.3rem);
           font-weight: 800;
           color: #ffffff;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.04em;
           margin-bottom: 0.4rem;
-          line-height: 1.1;
+          line-height: 1.2;
+          text-align: left;
           text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+          word-break: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
         }
 
         .team-card__role {
           font-family: 'Space Mono', monospace;
-          font-size: 0.65rem;
+          font-size: clamp(0.6rem, 0.85vw, 0.7rem);
           color: #f59e0b;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
           font-weight: 700;
+          text-align: left;
+          line-height: 1.5;
         }
 
         /* ── Details (Bio & Tech Stack) ── */
@@ -263,7 +285,6 @@ export default function Story() {
           padding-top: 1.2rem;
           transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s, padding-top 0.4s ease;
         }
-
         .team-card__bio {
           font-family: 'Rajdhani', sans-serif;
           font-size: 0.95rem;
@@ -289,15 +310,15 @@ export default function Story() {
         }
 
         .team-card__tech-icon-wrap {
-          width: 24px;
-          height: 24px;
-          filter: grayscale(100%) opacity(0.7);
-          transition: filter 0.3s ease, transform 0.3s ease;
+          width: 28px;
+          height: 28px;
+          filter: none;
+          opacity: 1;
+          transition: transform 0.3s ease;
         }
 
         .team-card__tech-icon-wrap:hover {
-          filter: grayscale(0%) opacity(1);
-          transform: scale(1.2) translateY(-2px);
+          transform: scale(1.15);
         }
       `}</style>
     </section>

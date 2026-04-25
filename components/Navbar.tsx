@@ -113,6 +113,9 @@ export default function Navbar() {
                 </ul>
 
                 <div className="flex items-center gap-4">
+                    <a href="#contact" className="hidden lg:inline-flex btn-primary no-underline items-center justify-center text-[0.7rem] uppercase mt-1">
+                        <span>BOOK A CALL</span>
+                    </a>
                     <button className="lg:hidden p-2 text-[var(--text)]">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

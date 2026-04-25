@@ -10,7 +10,7 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5px;
             margin-top: 5.5rem;
             background: var(--border);
@@ -20,7 +20,7 @@
         .price-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 3.5rem;
+            padding: 2.5rem 2rem;
             position: relative;
             overflow: hidden;
             transition: all 0.4s;

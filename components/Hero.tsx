@@ -252,15 +252,15 @@ export default function Hero() {
                     <div className="hero-stats"
                         style={{ animation: "fadeUp 0.8s 0.6s ease both", marginTop: "3rem", justifyContent: "flex-start", gap: "2rem" }}>
                         <div className="stat">
-                            <span className="stat-val" data-count="50">20</span>
+                            <span className="stat-val" data-count="50" style={{ color: '#fff' }}>20</span>
                             <span className="stat-label">Projects Shipped</span>
                         </div>
                         <div className="stat">
-                            <span className="stat-val" data-count="98">100</span>
+                            <span className="stat-val" data-count="98" style={{ color: '#fff' }}>100</span>
                             <span className="stat-label">Satisfaction %</span>
                         </div>
                         <div className="stat">
-                            <span className="stat-val" data-count="12">100+</span>
+                            <span className="stat-val" data-count="12" style={{ color: '#fff' }}>100+</span>
                             <span className="stat-label">Industries</span>
                         </div>
                     </div>

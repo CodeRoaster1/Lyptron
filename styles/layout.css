@@ -113,10 +113,22 @@ section {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 120px 6%;
+    padding: 60px 5%;
+}
+
+@media (min-width: 768px) {
+    .section-inner {
+        padding: 90px 6%;
+    }
 }
 
 @media (min-width: 1024px) {
+    .section-inner {
+        padding: 120px 6%;
+    }
+}
+
+@media (min-width: 1440px) {
     .section-inner {
         padding: 120px 240px;
     }
