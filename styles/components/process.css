@@ -1,0 +1,78 @@
+        /* PROCESS */
+        #process {
+            background: var(--bg3);
+        }
+
+        #process .section-inner {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .process-steps {
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--border2);
+            position: relative;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover {
+            padding-left: 1rem;
+        }
+
+        .process-step-num {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--border2);
+            line-height: 1;
+            transition: color 0.3s;
+            letter-spacing: -0.02em;
+        }
+
+        .process-step:hover .process-step-num {
+            color: var(--blue);
+        }
+
+        .process-step-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.03em;
+        }
+
+        .process-step-desc {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text2);
+            line-height: 1.9;
+            max-width: 620px;
+            letter-spacing: 0.01em;
+        }
+
+        .process-step-line {
+            position: absolute;
+            left: 40px;
+            bottom: -1px;
+            width: 0;
+            height: 1px;
+            background: var(--blue);
+            transition: width 0.5s;
+        }
+
+        .process-step:hover .process-step-line {
+            width: 80%;
+        }
+

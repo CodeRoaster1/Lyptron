@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background 0.4s, color 0.4s;
+    cursor: none;
+}
+
+/* CUSTOM CURSOR */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+}
+
+.cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--blue);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+body:has(a:hover) .cursor-ring,
+body:has(button:hover) .cursor-ring {
+    width: 48px;
+    height: 48px;
+    border-color: var(--gold);
+}
+
+/* CIRCUIT BACKGROUND */
+.circuit-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(var(--border2) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border2) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    opacity: 0.5;
+}
+
+/* GLOWING ORBS */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    animation: orb-pulse 8s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--glow-blue);
+    top: -150px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: var(--glow-gold);
+    bottom: 10%;
+    left: -80px;
+    animation-delay: -3s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: var(--glow-blue);
+    top: 50%;
+    left: 60%;
+    animation-delay: -5s;
+}
+
+/* SECTION BASE */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Full-bleed wrapper — sections stretch edge to edge */
+.section-inner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 120px 6%;
+}
+
+@media (min-width: 1024px) {
+    .section-inner {
+        padding: 120px 240px;
+    }
+}
+
+.container-wide {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* SCROLLING TICKER */
+.ticker-wrap {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    padding: 14px 0;
+    margin: 0;
+}
+
+.ticker-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ticker-item span {
+    color: var(--blue);
+    font-size: 1.2em;
+}
+
+/* Tighter top sections */
+.section-inner--tight {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Full bleed (no max-width cap) */
+.section-inner--full {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    padding-left: 14px;
+    border-left: 2px solid var(--blue);
+    line-height: 1;
+}
+
+.section-tag::before {
+    content: '//';
+    color: var(--blue);
+    margin-right: 2px;
+}
+
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.section-sub {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text2);
+    max-width: 580px;
+    line-height: 1.85;
+    margin-bottom: 3.5rem;
+    letter-spacing: 0.01em;
+}
+
+/* ── Global text spacing for body sections (excludes hero, navbar, footer) ── */
+main section:not(#hero) h1,
+main section:not(#hero) h2,
+main section:not(#hero) h3,
+main section:not(#hero) h4,
+main section:not(#hero) h5,
+main section:not(#hero) h6 {
+    margin-bottom: 1.5rem;
+}
+
+main section:not(#hero) p {
+    margin-bottom: 1.4rem;
+}
+
+main section:not(#hero) li {
+    margin-bottom: 0.8rem;
+}

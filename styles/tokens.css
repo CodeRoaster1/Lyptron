@@ -1,0 +1,41 @@
+:root[data-theme="dark"] {
+    --bg: #050508;
+    --bg2: #080b12;
+    --bg3: #0d1220;
+    --surface: #0f1522;
+    --surface2: #151d2e;
+    --border: rgba(59, 130, 246, 0.18);
+    --border2: rgba(255, 255, 255, 0.07);
+    --text: #e8edf5;
+    --text2: #8a9ab8;
+    --text3: #4a5a78;
+    --blue: #3b82f6;
+    --blue2: #60a5fa;
+    --gold: #f59e0b;
+    --gold2: #fbbf24;
+    --glow-blue: rgba(59, 130, 246, 0.35);
+    --glow-gold: rgba(245, 158, 11, 0.35);
+    --nav-bg: rgba(5, 5, 8, 0.85);
+    --card-bg: rgba(15, 21, 34, 0.8);
+}
+
+:root[data-theme="light"] {
+    --bg: #f0f4ff;
+    --bg2: #e8eef9;
+    --bg3: #dde5f5;
+    --surface: #ffffff;
+    --surface2: #f5f8ff;
+    --border: rgba(59, 130, 246, 0.25);
+    --border2: rgba(0, 0, 0, 0.08);
+    --text: #0d1220;
+    --text2: #3a4a68;
+    --text3: #8a9ab8;
+    --blue: #2563eb;
+    --blue2: #1d4ed8;
+    --gold: #d97706;
+    --gold2: #b45309;
+    --glow-blue: rgba(37, 99, 235, 0.2);
+    --glow-gold: rgba(217, 119, 6, 0.2);
+    --nav-bg: rgba(240, 244, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.9);
+}

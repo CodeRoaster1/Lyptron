@@ -1,0 +1,55 @@
+/* BUTTONS */
+.btn-primary {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--blue), #1d4ed8);
+    color: #fff;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--gold), #d97706);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-outline {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 10px 22px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border2);
+    cursor: pointer;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue2);
+}
+
+/* Add any other utility classes (like .glass-panel, etc.) here later */

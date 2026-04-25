@@ -1,0 +1,156 @@
+        /* PRICING */
+        #pricing {
+            background: var(--bg);
+        }
+
+        #pricing .section-inner {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5px;
+            margin-top: 5.5rem;
+            background: var(--border);
+            border: 1.5px solid var(--border);
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            border-top: 2px solid transparent;
+        }
+
+        .price-card:hover {
+            border-top-color: var(--blue);
+            box-shadow: 0 0 40px rgba(59,130,246,0.06);
+        }
+
+        .price-card.featured {
+            background: linear-gradient(160deg, var(--surface2) 0%, var(--surface) 100%);
+        }
+
+        .price-card.featured::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1.5px solid var(--blue);
+            pointer-events: none;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            background: var(--gold);
+            color: #000;
+            padding: 3px 10px;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .price-tier {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--gold);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            padding-left: 12px;
+            border-left: 2px solid var(--gold);
+        }
+
+        .price-val {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .price-val sup {
+            font-size: 1.2rem;
+            vertical-align: top;
+            margin-top: 0.5rem;
+            color: var(--blue);
+        }
+
+        .price-freq {
+            font-size: 0.85rem;
+            color: var(--text3);
+            margin-bottom: 3rem;
+        }
+
+        .price-divider {
+            height: 1px;
+            background: var(--border2);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text2);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        .price-features li::before {
+            content: '◈';
+            color: var(--blue);
+            flex-shrink: 0;
+            font-size: 0.7rem;
+        }
+
+        .price-features li.unavail {
+            color: var(--text3);
+        }
+
+        .price-features li.unavail::before {
+            color: var(--text3);
+            content: '◇';
+        }
+
+        .btn-price {
+            width: 100%;
+            padding: 12px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s;
+            clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+        }
+
+        .btn-price:hover,
+        .price-card.featured .btn-price {
+            background: linear-gradient(135deg, var(--blue), #1d4ed8);
+            border-color: var(--blue);
+            color: #fff;
+        }
+

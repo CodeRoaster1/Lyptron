@@ -1,65 +1,149 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Ticker from "@/components/Ticker";
+import Services from "@/components/Services";
+import Work from "@/components/Work";
+import Story from "@/components/Story";
+import Process from "@/components/Process";
+import Pricing from "@/components/Pricing";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
+  useEffect(() => {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((el) => revealObserver.observe(el));
+
+    // Re-scan after a short delay for dynamic content
+    const timeout = setTimeout(() => {
+      const dynamicReveals = document.querySelectorAll('.reveal');
+      dynamicReveals.forEach((el) => revealObserver.observe(el));
+    }, 500);
+
+    // Stats counter animation observer
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          entry.target.classList.add('counted');
+          entry.target.querySelectorAll('.stat-val').forEach(el => {
+            const elNode = el as HTMLElement;
+            const rawText = elNode.textContent || "0";
+            const max = parseInt(rawText.replace(/\D/g, '') || "0", 10);
+            if (max === 0) return;
+            
+            const isPercent = rawText.includes('%');
+            const suffix = isPercent ? '%' : '+';
+            
+            let c = 0;
+            const inc = max / 30;
+            const timer = setInterval(() => {
+              c += inc;
+              if (c >= max) { 
+                clearInterval(timer); 
+                elNode.textContent = max + suffix; 
+              } else { 
+                elNode.textContent = Math.floor(c) + suffix; 
+              }
+            }, 40);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    const stats = document.querySelector('.hero-stats');
+    if (stats) statsObserver.observe(stats);
+
+    // Services drag scroll functionality
+    const scroll = document.getElementById('svcScroll');
+    const thumb = document.getElementById('svcScrollThumb');
+    if (scroll) {
+      let isDown = false, startX: number, scrollLeft: number;
+      
+      const onMouseDown = (e: MouseEvent) => { 
+        isDown = true; 
+        scroll.classList.add('active'); 
+        startX = e.pageX - scroll.offsetLeft; 
+        scrollLeft = scroll.scrollLeft; 
+      };
+      const onMouseLeave = () => { isDown = false; };
+      const onMouseUp = () => { isDown = false; };
+      const onMouseMove = (e: MouseEvent) => { 
+        if (!isDown) return; 
+        e.preventDefault(); 
+        const x = e.pageX - scroll.offsetLeft; 
+        scroll.scrollLeft = scrollLeft - (x - startX) * 1.5; 
+      };
+
+      scroll.addEventListener('mousedown', onMouseDown);
+      scroll.addEventListener('mouseleave', onMouseLeave);
+      scroll.addEventListener('mouseup', onMouseUp);
+      scroll.addEventListener('mousemove', onMouseMove);
+
+      let touchStart = 0, touchScrollLeft = 0;
+      const onTouchStart = (e: TouchEvent) => { 
+        touchStart = e.touches[0].pageX; 
+        touchScrollLeft = scroll.scrollLeft; 
+      };
+      const onTouchMove = (e: TouchEvent) => { 
+        const dx = touchStart - e.touches[0].pageX; 
+        scroll.scrollLeft = touchScrollLeft + dx; 
+      };
+
+      scroll.addEventListener('touchstart', onTouchStart, { passive: true });
+      scroll.addEventListener('touchmove', onTouchMove, { passive: true });
+
+      const onScroll = () => {
+        if (!thumb) return;
+        const pct = scroll.scrollLeft / (scroll.scrollWidth - scroll.clientWidth);
+        thumb.style.width = (30 + pct * 70) + '%';
+        thumb.style.marginLeft = (pct * 40) + '%';
+      };
+      scroll.addEventListener('scroll', onScroll);
+      
+      return () => {
+        revealObserver.disconnect();
+        statsObserver.disconnect();
+        scroll.removeEventListener('mousedown', onMouseDown);
+        scroll.removeEventListener('mouseleave', onMouseLeave);
+        scroll.removeEventListener('mouseup', onMouseUp);
+        scroll.removeEventListener('mousemove', onMouseMove);
+        scroll.removeEventListener('touchstart', onTouchStart);
+        scroll.removeEventListener('touchmove', onTouchMove);
+        scroll.removeEventListener('scroll', onScroll);
+      };
+    }
+
+    return () => {
+      revealObserver.disconnect();
+      statsObserver.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Ticker />
+        <Services />
+        <Work />
+        <Story />
+        <Process />
+        <Pricing />
+        <Contact />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
