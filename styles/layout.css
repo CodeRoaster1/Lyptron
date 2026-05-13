@@ -111,27 +111,9 @@ section {
 /* Full-bleed wrapper — sections stretch edge to edge */
 .section-inner {
     width: 100%;
-    max-width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 60px 5%;
-}
-
-@media (min-width: 768px) {
-    .section-inner {
-        padding: 90px 6%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .section-inner {
-        padding: 120px 6%;
-    }
-}
-
-@media (min-width: 1440px) {
-    .section-inner {
-        padding: 120px 240px;
-    }
+    padding: 80px 6%;
 }
 
 .container-wide {

@@ -30,6 +30,7 @@
         .price-card:hover {
             border-top-color: var(--blue);
             box-shadow: 0 0 40px rgba(59,130,246,0.06);
+            transform: translateY(-4px);
         }
 
         .price-card.featured {

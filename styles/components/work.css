@@ -1,120 +1,139 @@
-        /* WORK / PORTFOLIO */
-        #work {
-            background: var(--bg2);
-        }
+/* WORK / PORTFOLIO — Bento Grid */
+#work {
+    background: var(--bg2);
+}
 
-        #work .section-inner {
-            padding-top: 120px;
-            padding-bottom: 120px;
-        }
+#work .section-inner {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
 
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5px;
-            margin-top: 5rem;
-            background: var(--border);
-            border: 1.5px solid var(--border);
-            width: 100%;
-        }
+/* ── 12-column bento grid ── */
+.work-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    width: 100%;
+}
 
-        .work-card {
-            background: var(--surface);
-            overflow: hidden;
-            position: relative;
-            min-height: 260px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
-            transition: all 0.4s;
-            cursor: pointer;
-        }
+/* First 2 cards: span 7 + 5 */
+.work-bento-lg:nth-child(1) { grid-column: span 7; }
+.work-bento-lg:nth-child(2) { grid-column: span 5; }
+/* Remaining cards: span 4 each */
+.work-bento-sm { grid-column: span 4; }
 
-        .work-card:nth-child(1) {
-            grid-column: span 7;
-        }
+@media (max-width: 1023px) {
+    .work-bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .work-bento-lg:nth-child(1),
+    .work-bento-lg:nth-child(2) { grid-column: span 3; }
+    .work-bento-sm { grid-column: span 2; }
+}
 
-        .work-card:nth-child(2) {
-            grid-column: span 5;
-        }
+@media (max-width: 640px) {
+    .work-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .work-bento-lg,
+    .work-bento-sm { grid-column: span 1; }
+}
 
-        .work-card:nth-child(3) {
-            grid-column: span 4;
-        }
+/* ── Bento Card ── */
+.work-bento-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--surface);
+    min-height: 340px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
 
-        .work-card:nth-child(4) {
-            grid-column: span 4;
-        }
+.work-bento-lg { min-height: 420px; }
 
-        .work-card:nth-child(5) {
-            grid-column: span 4;
-        }
+.work-bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 40px rgba(59, 130, 246, 0.08);
+}
 
-        .work-card-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            opacity: 0.15;
-            transition: opacity 0.4s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-        }
+/* ── Ghost-text background number ── */
+.work-ghost-num {
+    position: absolute;
+    top: -0.15em;
+    right: 0.1em;
+    font-family: 'Orbitron', monospace;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.5s ease, color 0.5s ease;
+    user-select: none;
+}
 
-        .work-card:hover .work-card-bg {
-            opacity: 0.28;
-        }
+.work-bento-card:hover .work-ghost-num {
+    color: rgba(59, 130, 246, 0.07);
+}
 
-        .work-card:hover {
-            background: var(--surface2);
-        }
+/* ── Corner brackets ── */
+.work-bracket {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 15;
+    pointer-events: none;
+    transition: width 0.4s ease, height 0.4s ease, border-color 0.4s ease;
+}
 
-        .work-card-content {
-            position: relative;
-            z-index: 1;
-        }
+.work-bracket-tl {
+    top: 0;
+    left: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
 
-        .work-cat {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            color: var(--gold);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
+.work-bracket-br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
 
-        .work-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 0.8rem;
-        }
+.work-bento-card:hover .work-bracket-tl {
+    border-color: var(--blue);
+    width: 36px;
+    height: 36px;
+}
 
-        .work-meta {
-            font-size: 0.85rem;
-            color: var(--text3);
-        }
+.work-bento-card:hover .work-bracket-br {
+    border-color: var(--gold);
+    width: 36px;
+    height: 36px;
+}
 
-        .work-arrow {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            z-index: 1;
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text3);
-            transition: all 0.3s;
-        }
+/* ── Category chip ── */
+.work-cat-chip {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+    transition: background 0.3s, border-color 0.3s;
+}
 
-        .work-card:hover .work-arrow {
-            border-color: var(--blue);
-            color: var(--blue);
-        }
-
+.work-bento-card:hover .work-cat-chip {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.35);
+}
